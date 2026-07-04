@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arena Strike — 3D FPS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="overlay">
+    <div id="menu">
+      <h1>ARENA STRIKE</h1>
+      <p class="subtitle">3D First-Person Shooter</p>
+      <div class="instructions">
+        <h2>Controls</h2>
+        <ul>
+          <li><kbd>↑</kbd> <kbd>↓</kbd> Move forward / backward</li>
+          <li><kbd>←</kbd> <kbd>→</kbd> Turn left / right</li>
+          <li><kbd>Mouse</kbd> Aim / look around</li>
+          <li><kbd>Left Click</kbd> Shoot</li>
+          <li><kbd>Right Click</kbd> Zoom &amp; lock onto enemy</li>
+        </ul>
+      </div>
+      <p class="objective">Eliminate the enemy bot before it eliminates you.</p>
+      <button id="start-btn">START GAME</button>
+    </div>
+    <div id="game-over" class="hidden">
+      <h1 id="result-title">VICTORY</h1>
+      <p id="result-message"></p>
+      <button id="restart-btn">PLAY AGAIN</button>
+    </div>
+  </div>
+
+  <div id="hud" class="hidden">
+    <div id="health-bar">
+      <span>YOU</span>
+      <div class="bar-track"><div id="player-health-fill" class="bar-fill player"></div></div>
+      <span id="player-health-text">100</span>
+    </div>
+    <div id="enemy-bar">
+      <span>ENEMY</span>
+      <div class="bar-track"><div id="enemy-health-fill" class="bar-fill enemy"></div></div>
+      <span id="enemy-health-text">100</span>
+    </div>
+    <div id="crosshair">
+      <div class="crosshair-dot"></div>
+      <div class="crosshair-line top"></div>
+      <div class="crosshair-line bottom"></div>
+      <div class="crosshair-line left"></div>
+      <div class="crosshair-line right"></div>
+    </div>
+    <div id="zoom-indicator" class="hidden">TARGET LOCK</div>
+    <div id="ammo">READY</div>
+  </div>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.162.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.162.0/examples/jsm/"
+    }
+  }
+  </script>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
